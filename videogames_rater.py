@@ -3,12 +3,16 @@
 # rates video games
 
 def print_dictionary(dictionary):
-    for game, rating in dictionary.items():
-        print("game:", game, "rating:", rating)
+    for id, game in dictionary.items():
+        for k, v in game.items():
+            print("ID: {} game: {}\trating: {}".format(id, game["name"], game["Rating"]))
 
 if __name__ == "__main__":
     
-    videogames = {"MineCraft":5, "Call Of Duty":1, "Angry Birds":4,
-                  "Splatoon 2":5, "Animal Crossing":4}
+    videogames = {1:{"name":"MineCraft", "Rating":5,},
+                  2:{"name":"Call Of Duty", "Rating":1},
+                  3:{"name":"Angry Birds", "Rating":4},
+                  4:{"name":"Splatoon 2", "Rating":5},
+                  5:{"name":"Animal Crossing", "Rating":4}}
 
-    print(videogames)
+    print_dictionary(videogames)
